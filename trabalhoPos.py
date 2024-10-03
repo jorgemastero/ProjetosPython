@@ -27,9 +27,9 @@ texto_traduzido = traducao.text
 
 # Removendo as stopwords
 def remover_stopwords(texto_traduzido):
-    stopwords_pt = set(stopwords.words('english')).union({"report", "assessment", "useful", "0", "1", "2", "3", "4", "5"})
+    stopwords_en = set(stopwords.words('english')).union({"report", "assessment", "useful", "0", "1", "2", "3", "4", "5"})
     palavras = texto_traduzido.split()
-    palavras_sem_stopwords = [palavra for palavra in palavras if palavra.lower() not in stopwords_pt and not re.match(r'^\d+﹩', palavra)]
+    palavras_sem_stopwords = [palavra for palavra in palavras if palavra.lower() not in stopwords_en and not re.match(r'^\d+﹩', palavra)]
     return ' '.join(palavras_sem_stopwords)
 
 def stemming(texto_traduzido):
